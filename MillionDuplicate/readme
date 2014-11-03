@@ -1,0 +1,4 @@
+Write a function in the programming language of your choice to solve the following problems. Each function should be an accompanied by a unit test. 
+
+ 
+Given an array of integers between 1 and 1,000,000. One integer is in the array twice. Find the duplicate.

@@ -1,0 +1,3 @@
+Write a function in the programming language of your choice to solve the following problems. Each function should be an accompanied by a unit test. 
+
+ Find the first non-repeating character in a string:("DEFD" -> E )

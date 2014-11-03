@@ -1,0 +1,3 @@
+Write a function in the programming language of your choice to solve the following problems. Each function should be an accompanied by a unit test. 
+
+ A standard deck of 52 cards is represented in an array. Each card is represented as an integer. Write a method to shuffle the cards.
