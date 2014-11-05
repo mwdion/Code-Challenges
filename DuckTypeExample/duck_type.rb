@@ -36,3 +36,8 @@ black_cat.sees_dog #=> "cat runs and hides"
 goes_outside(Dog.new)
 #=> "woof woof"
 #=> "the dog chases cat"
+
+goes_outside(Cat.new)
+#=> "meow meow"
+#=> "cat runs and hides"
+
