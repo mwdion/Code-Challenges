@@ -9,4 +9,3 @@ class ShuffleTest < MiniTest::Unit::TestCase
     cards.shuffle.wont_equal (cards)
   end
 end
-end
