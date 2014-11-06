@@ -1,0 +1,6 @@
+%h1 Soda Flavor Index
+- @soda_flavors.each do |soda_flavor|
+  = link_to "#{soda_flavor.soda}", soda_flavor_path(soda_flavor)
+  = link_to "Edit", edit_soda_flavor_path(soda_flavor), class: 'btn btn-xs btn-warning'
+  = link_to "Delete", soda_flavor_path(soda_flavor), method: :delete, class: 'btn btn-xs btn-danger'
+  %br
