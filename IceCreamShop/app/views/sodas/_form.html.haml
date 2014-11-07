@@ -1,0 +1,12 @@
+= form_for @soda do |f|
+  = f.text_field :order_name, class: 'form-control focusedInput', placeholder: "Type Order Name Here..."
+  = f.select :price, options_for_select(["Select One",'4', '6'] ), {}, { class: 'form-control form-control' }
+  =f.submit "Purchase", class: 'btn btn-success btn-block'
+
+
+
+
+  / - @ice_cream_flavor.each do |flavor|
+  /   = check_box_tag @ice_cream_flavors[], ice_cream_flavor.id
+  /   %p3= ice_cream_flavor.flavor
+  /   %br
