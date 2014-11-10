@@ -2,9 +2,9 @@
   = f.text_field :order_name, class: 'form-control focusedInput', placeholder: "Type Order Name Here..."
   = f.select :vessel, options_for_select(["Select One",'Cup', 'Waffle Cone'] ), {}, { class: 'form-control form-control' }
   = f.select :price, options_for_select(["Select One",'4', '6'] ), {}, { class: 'form-control form-control' }
-  / - @ice_cream_flavor.all.each do |flavor|
-  /   = check_box_tag 'ice_cream[ice_cream_flavor_ids][]', ice_cream_flavor.id
-  /   = ice_cream_flavor.flavor
+  - @ice_cream_flavor.all.each do |flavor|
+    = check_box_tag 'ice_cream[ice_cream_flavor_ids][]', ice_cream_flavor.id
+    = ice_cream_flavor.flavor
   =f.submit "Purchase", class: 'btn btn-success btn-block'
 
 

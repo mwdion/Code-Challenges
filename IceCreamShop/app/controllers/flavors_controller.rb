@@ -12,7 +12,7 @@ class FlavorsController < ApplicationController
   end
 
   def create
-    @flavor = flavor.create flavor_params
+    @flavor = Flavor.create flavor_params
     if @flavor.save == true
     redirect_to flavors_path
     else
@@ -35,7 +35,7 @@ class FlavorsController < ApplicationController
 
  private
   def find_flavor
-    @flavor = flavor.find params[:id]
+    @flavor = Flavor.find params[:id]
   end
   def flavor_params
     params.require(:flavor).permit(:name)

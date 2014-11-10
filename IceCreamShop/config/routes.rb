@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :milkshakes
   resources :soda_flavors
   resources :sodas 
-  resource :flavors
+  resources :flavors
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

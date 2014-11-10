@@ -1,6 +1,6 @@
 class IceCreamsController < ApplicationController
   before_action :find_icecream, only: [:show, :edit, :update, :destroy] 
-  before_action :find_flavor, only: [:show, :edit, :update, :destroy]  
+  # before_action :find_flavor, only: [:show, :edit, :update, :destroy]  
   def index
     @ice_cream = IceCream.all
     @ice_cream_flavors = IceCreamFlavor.all
