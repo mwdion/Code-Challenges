@@ -11,12 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141106002816) do
+ActiveRecord::Schema.define(version: 20141110184317) do
 
-  create_table "ice_cream_flavors", force: true do |t|
-    t.string   "flavor"
+  create_table "flavors", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "ice_cream_flavors", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "ice_cream_id"
+    t.integer  "flavor_id"
   end
 
   create_table "ice_creams", force: true do |t|
@@ -38,9 +45,10 @@ ActiveRecord::Schema.define(version: 20141106002816) do
   end
 
   create_table "soda_flavors", force: true do |t|
-    t.string   "soda"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "soda_id"
+    t.integer  "flavor_id"
   end
 
   create_table "sodas", force: true do |t|
