@@ -1,7 +1,0 @@
-%h1 Ice Cream Flavor Index
-- @ice_cream_flavors.each do |ice_cream_flavor|
-  = link_to "#{ice_cream_flavor.flavor}", ice_cream_flavor_path(ice_cream_flavor)
-  = link_to "Edit", edit_ice_cream_flavor_path(ice_cream_flavor), class: 'btn btn-xs btn-warning'
-  = link_to "Delete", ice_cream_flavor_path(ice_cream_flavor), method: :delete, class: 'btn btn-xs btn-danger'
-  %br
-= link_to "Home", root_path, class: 'btn btn-success btn-lg btn-block'
