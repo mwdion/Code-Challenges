@@ -2,12 +2,7 @@
   = f.text_field :order_name, class: 'form-control focusedInput', placeholder: "Type Order Name Here..."
   = f.select :milk, options_for_select(["Select One",'2% Milk', 'Skim Milk', 'Whole Milk'] ), {}, { class: 'form-control form-control' }
   = f.select :price, options_for_select(["Select One",'4', '6'] ), {}, { class: 'form-control form-control' }
-  =f.submit "Purchase", class: 'btn btn-success btn-block'
-
-
-
-
-  / - @ice_cream_flavor.each do |flavor|
-  /   = check_box_tag @ice_cream_flavors[], ice_cream_flavor.id
-  /   %p3= ice_cream_flavor.flavor
-  /   %br
+  / - @ice_cream_flavor.all.each do |flavor|
+  /   = check_box_tag 'milkshake[ice_cream_flavor_ids][]', ice_cream_flavor.id
+  /   = ice_cream_flavor.flavor
+  = f.submit "Purchase", class: 'btn btn-success btn-block'

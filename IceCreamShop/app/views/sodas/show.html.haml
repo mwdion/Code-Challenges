@@ -1,2 +1,4 @@
-%h1 Sodas#show
-%p Find me in app/views/sodas/show.html.haml
+%h1 Soda Order
+= @soda.order_name
+= @soda.price
+= link_to "Home", root_path, class: 'btn btn-success btn-lg btn-block'

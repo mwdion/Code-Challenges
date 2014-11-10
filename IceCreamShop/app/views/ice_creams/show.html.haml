@@ -1,2 +1,5 @@
-%h1 IceCream#show
-%p Find me in app/views/ice_cream/show.html.haml
+%h1 Ice Cream Order
+= @ice_cream.order_name
+= @ice_cream.vessel
+= @ice_cream.price
+= link_to "Home", root_path, class: 'btn btn-success btn-lg btn-block'

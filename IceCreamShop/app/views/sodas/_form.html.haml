@@ -1,12 +1,14 @@
 = form_for @soda do |f|
   = f.text_field :order_name, class: 'form-control focusedInput', placeholder: "Type Order Name Here..."
   = f.select :price, options_for_select(["Select One",'4', '6'] ), {}, { class: 'form-control form-control' }
+  / - @soda_flavor.each do |soda_flavor|
+  /   = check_box_tag 'soda[soda_flavor_ids][]', soda_flavor.id
+  /   = soda_flavor.soda
+  / - @ice_cream_flavor.all.each do |flavor|
+  /   = check_box_tag 'soda[ice_cream_flavor_ids][]', ice_cream_flavor.id
+  /   = ice_cream_flavor.flavor
   =f.submit "Purchase", class: 'btn btn-success btn-block'
 
 
 
 
-  / - @ice_cream_flavor.each do |flavor|
-  /   = check_box_tag @ice_cream_flavors[], ice_cream_flavor.id
-  /   %p3= ice_cream_flavor.flavor
-  /   %br

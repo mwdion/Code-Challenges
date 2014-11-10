@@ -1,2 +1,7 @@
-%h1 Sodas#index
-%p Find me in app/views/sodas/index.html.haml
+%h1 Soda Order Index
+- @sodas.each do |soda|
+  = link_to "#{soda.order_name}", soda_path(soda)
+  = link_to "Edit", edit_soda_path(soda), class: 'btn btn-xs btn-warning'
+  = link_to "Delete", soda_path(soda), method: :delete, class: 'btn btn-xs btn-danger'
+  %br
+= link_to "Home", root_path, class: 'btn btn-success btn-lg btn-block'
