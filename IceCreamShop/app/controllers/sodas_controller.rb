@@ -1,9 +1,8 @@
 class SodasController < ApplicationController
   before_action :find_soda, only: [:show, :edit, :update, :destroy] 
-  before_action :find_flavor, only: [:show, :edit, :update, :destroy]  
+  before_action :find_flavor, only: [:index, :new, :edit]  
   def index
     @sodas = Soda.all
-    @ice_cream_flavors = IceCreamFlavor.all
   end
 
   def show
@@ -11,7 +10,6 @@ class SodasController < ApplicationController
 
   def new
     @soda = Soda.new
-    @ice_cream_flavor = IceCreamFlavor.all
   end
 
   def create
@@ -41,9 +39,9 @@ class SodasController < ApplicationController
     @soda = Soda.find params[:id]
   end
   def find_flavor
-    @soda_flavor = SodaFlavor.find params[:id]
+    @flavors = Flavor.all
   end
   def soda_params
-    params.require(:soda).permit(:price, :soda_flavor_id, :ice_cream_flavor_id, :order_name, :price, :discount)
+    params.require(:soda).permit(:price, :soda_flavor_id, :ice_cream_flavor_id, :order_name, :price, :discount, flavor_ids:[])
   end
 end

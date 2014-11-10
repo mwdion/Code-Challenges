@@ -1,6 +1,6 @@
 class MilkshakesController < ApplicationController
   before_action :find_milkshake, only: [:show, :edit, :update, :destroy] 
-  before_action :find_flavor, only: [:show, :edit, :update, :destroy]  
+  before_action :find_flavor, only: [:index, :new, :edit]  
   def index
     @milkshakes = Milkshake.all
     @ice_cream_flavors = IceCreamFlavor.all
@@ -41,9 +41,9 @@ class MilkshakesController < ApplicationController
       @milkshake = Milkshake.find params[:id]
     end
     def find_flavor
-      @ice_cream_flavor = IceCreamFlavor.find params[:id]
+      @flavors = Flavor.all
     end
     def milkshake_params
-      params.require(:milkshake).permit(:price, :ice_cream_flavor_id, :milk, :order_name)
+      params.require(:milkshake).permit(:price, :ice_cream_flavor_id, :milk, :order_name, flavor_ids:[])
     end
 end

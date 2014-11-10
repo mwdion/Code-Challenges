@@ -1,3 +1,4 @@
 class Milkshake < ActiveRecord::Base
-  has_many :ice_cream_flavors
+  has_many :milkshake_flavors
+  has_many :flavors, through: :milkshake_flavors
 end

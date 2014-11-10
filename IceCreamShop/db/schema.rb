@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141110184317) do
+ActiveRecord::Schema.define(version: 20141110225046) do
 
   create_table "flavors", force: true do |t|
     t.string   "name"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20141110184317) do
   end
 
   create_table "ice_creams", force: true do |t|
-    t.integer  "ice_cream_flavor_id"
     t.integer  "price"
     t.string   "vessel"
     t.string   "order_name"
@@ -35,13 +34,20 @@ ActiveRecord::Schema.define(version: 20141110184317) do
     t.datetime "updated_at"
   end
 
+  create_table "milkshake_flavors", force: true do |t|
+    t.integer  "milkshake_id"
+    t.integer  "flavor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "milkshakes", force: true do |t|
-    t.integer  "ice_cream_flavor_id"
     t.integer  "price"
     t.string   "milk"
     t.string   "order_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "discount"
   end
 
   create_table "soda_flavors", force: true do |t|
@@ -52,13 +58,12 @@ ActiveRecord::Schema.define(version: 20141110184317) do
   end
 
   create_table "sodas", force: true do |t|
-    t.integer  "ice_cream_flavor_id"
-    t.integer  "soda_flavor_id"
     t.integer  "price"
     t.string   "discount"
     t.string   "order_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "float_flavor"
   end
 
 end
