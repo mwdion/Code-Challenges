@@ -1,4 +1,5 @@
 = form_for @ice_cream_flavor do |f|
-  = f.text_field :flavor, class: 'form-control focusedInput', placeholder: "Add Flavor Here..."
+  = f.text_field :flavor_id, class: 'form-control focusedInput', placeholder: "Add Flavor Id Here..."
+  = f.text_field :ice_cream_id, class: 'form-control focusedInput', placeholder: "Add Ice Cream Id Here..."
   =f.submit "Add Flavor", class: 'btn btn-success btn-block'
 

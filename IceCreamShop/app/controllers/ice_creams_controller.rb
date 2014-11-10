@@ -1,9 +1,10 @@
 class IceCreamsController < ApplicationController
   before_action :find_icecream, only: [:show, :edit, :update, :destroy] 
-  # before_action :find_flavor, only: [:show, :edit, :update, :destroy]  
+  before_action :find_flavor, only: [:index, :new, :edit]  
   def index
     @ice_cream = IceCream.all
     @ice_cream_flavors = IceCreamFlavor.all
+    @flavors = Flavor.all
   end
 
   def show
@@ -41,9 +42,9 @@ class IceCreamsController < ApplicationController
       @ice_cream = IceCream.find params[:id]
     end
     def find_flavor
-      @ice_cream_flavor = IceCreamFlavor.find params[:id]
+      @flavors = Flavor.all
     end
     def ice_cream_params
-      params.require(:ice_cream).permit(:price, :ice_cream_flavor_id, :vessel, :order_name)
+      params.require(:ice_cream).permit(:price, :ice_cream_flavor_id, :vessel, :order_name, flavor_ids:[])
     end
 end
